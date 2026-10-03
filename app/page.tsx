@@ -1,69 +1,109 @@
 import Image from "next/image";
+import Link from "next/link";
+
+const highlights = [
+  {
+    number: "01",
+    title: "Made to move with you",
+    copy: "Thoughtful fits and considered fabrics, made for wherever the day takes you.",
+  },
+  {
+    number: "02",
+    title: "Less, but better",
+    copy: "Timeless pieces designed to stay in your wardrobe well beyond a season.",
+  },
+  {
+    number: "03",
+    title: "A little more personal",
+    copy: "Find the silhouettes, details and colours that feel unmistakably like you.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <main>
+      <section className="home-hero">
         <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+          className="home-hero-image"
+          src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=2200&q=90"
+          alt="A model wearing an effortless neutral look"
+          fill
           priority
+          sizes="100vw"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+        <div className="home-hero-shade" />
+        <div className="home-hero-content page-wrap">
+          <p className="eyebrow eyebrow-light">A new point of view</p>
+          <h1>Wear what<br />feels like you.</h1>
+          <p className="hero-copy">
+            Thoughtful essentials. Unexpected details. A wardrobe that makes
+            getting dressed feel like the best part of your day.
           </p>
+          <Link className="button button-light" href="/your-styles">
+            Find your style <span aria-hidden="true">↗</span>
+          </Link>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="hero-index"><span>01</span> / 04</div>
+      </section>
+
+      <section className="intro-section page-wrap">
+        <div className="intro-mark" aria-hidden="true">I.</div>
+        <div>
+          <p className="eyebrow">A wardrobe with intention</p>
+          <h2>Good style isn&apos;t found.<br /><em>It&apos;s felt.</em></h2>
         </div>
-      </main>
-    </div>
+        <p className="intro-copy">
+          Invizz is a little reminder to dress for yourself. We bring together
+          considered pieces, honest craft and the freedom to make every look
+          your own.
+        </p>
+      </section>
+
+      <section className="home-feature">
+        <div className="feature-image">
+          <Image
+            src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1400&q=85"
+            alt="Friends sharing a moment in their favourite outfits"
+            fill
+            sizes="(max-width: 760px) 100vw, 52vw"
+          />
+        </div>
+        <div className="feature-copy">
+          <p className="eyebrow">The Invizz edit / 01</p>
+          <h2>Style is personal.<br /><em>Let&apos;s keep it that way.</em></h2>
+          <p>
+            From everyday layers to the pieces you save for a reason, discover
+            a collection that leaves room for you in every detail.
+          </p>
+          <Link className="text-link" href="/your-styles">Explore your styles <span aria-hidden="true">↗</span></Link>
+        </div>
+      </section>
+
+      <section className="values-section page-wrap">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">The things we believe</p>
+            <h2>Considered in<br /><em>every way.</em></h2>
+          </div>
+          <Link className="text-link" href="/our-promises">Our promises <span aria-hidden="true">↗</span></Link>
+        </div>
+        <div className="value-list">
+          {highlights.map((item) => (
+            <article className="value-item" key={item.number}>
+              <span className="value-number">{item.number}</span>
+              <h3>{item.title}</h3>
+              <p>{item.copy}</p>
+              <span className="value-arrow" aria-hidden="true">↗</span>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="home-quote">
+        <p className="eyebrow eyebrow-light">A thought to take with you</p>
+        <blockquote>“The best outfit is the one that lets you be entirely yourself.”</blockquote>
+        <Link className="button button-light" href="/about-us">Get to know us <span aria-hidden="true">↗</span></Link>
+      </section>
+    </main>
   );
 }
