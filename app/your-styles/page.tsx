@@ -1,48 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-
-const launches = [
-  {
-    name: "The Sunday Shirt",
-    description: "An easy, airy layer for slow mornings and long lunches.",
-    price: "$88",
-    image: "photo-1598554747436-c9293d6a588f",
-    tone: "sand",
-    label: "Just landed",
-  },
-  {
-    name: "Everywhere Trouser",
-    description: "A relaxed shape with a little more room to roam.",
-    price: "$120",
-    image: "photo-1506629905607-d9c297d21b08",
-    tone: "olive",
-    label: "Bestseller",
-  },
-  {
-    name: "Soft Form Knit",
-    description: "The kind of knit you reach for, again and again.",
-    price: "$96",
-    image: "photo-1576566588028-4147f3842f27",
-    tone: "blue",
-    label: "New colour",
-  },
-  {
-    name: "Daylight Dress",
-    description: "One-and-done dressing, with a little room to play.",
-    price: "$148",
-    image: "photo-1496747611176-843222e1e57c",
-    tone: "rose",
-    label: "Limited run",
-  },
-  {
-    name: "The Good Layer",
-    description: "A light jacket that makes the in-between feel easy.",
-    price: "$168",
-    image: "photo-1548126032-079a0fb0099d",
-    tone: "clay",
-    label: "Made to keep",
-  },
-];
+import { formatPrice, topLaunches } from "@/lib/products";
 
 const styles = [
   {
@@ -77,7 +35,7 @@ const styles = [
     name: "The Artful Minimalist",
     description: "A quieter palette. Details that do the talking.",
     image: "photo-1534528741775-53994a69daeb",
-    className: "style-card-wide",
+    className: "",
     number: "05",
   },
 ];
@@ -116,23 +74,23 @@ export default function YourStylesPage() {
       <section className="launches-section page-wrap">
         <SectionTitle kicker="Fresh from the studio" title="Our Top Launches" note="Small runs. Big favourites. Meet the pieces we can't stop thinking about." />
         <div className="launch-grid">
-          {launches.map((item, index) => (
-            <article className={`launch-card launch-${index + 1}`} key={item.name}>
-              <Link className={`launch-image ${item.tone}`} href="/our-promises" aria-label={`Discover ${item.name}`}>
+          {topLaunches.map((item, index) => (
+            <article className={`launch-card launch-${index + 1}`} key={item.slug}>
+              <Link className={`launch-image ${item.tone}`} href={`/your-styles/${item.slug}`} aria-label={`Discover ${item.name}`}>
                 <Image
                   src={`https://images.unsplash.com/${item.image}?auto=format&fit=crop&w=900&q=85`}
                   alt={item.name}
                   fill
                   sizes="(max-width: 640px) 90vw, (max-width: 1000px) 45vw, 24vw"
                 />
-                <span className="product-label">{item.label}</span>
+                <span className="product-label">{item.soldOut ? "Sold out" : item.label}</span>
                 <span className="quick-view" aria-hidden="true">↗</span>
               </Link>
               <div className="launch-info">
                 <div><h3>{item.name}</h3><p>{item.description}</p></div>
-                <span className="product-price">{item.price}</span>
+                <span className="product-price">{formatPrice(item.price)}</span>
               </div>
-              <Link className="card-cta" href="/our-promises">Discover the piece <span aria-hidden="true">↗</span></Link>
+              <Link className="card-cta" href={`/your-styles/${item.slug}`}>Discover the piece <span aria-hidden="true">↗</span></Link>
             </article>
           ))}
         </div>
