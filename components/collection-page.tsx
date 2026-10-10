@@ -14,7 +14,7 @@ export function CollectionPage({ gender }: { gender: Gender }) {
     <main>
       <section className="page-hero page-wrap">
         <div>
-          <p className="eyebrow">The Invizz collection / {page.label}</p>
+          <p className="eyebrow">The Invidzz collection / {page.label}</p>
           <h1>{page.title}<br /><em>{page.accent}</em></h1>
         </div>
         <div className="page-hero-note">

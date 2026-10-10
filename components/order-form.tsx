@@ -207,7 +207,7 @@ export function OrderForm({ product }: { product: Product }) {
         Proceed to checkout <span aria-hidden="true">↗</span>
       </button>
       <p className="order-hint">
-        Next you&apos;ll pay by UPI (Google Pay, PhonePe, Paytm, BHIM or any UPI app). We never ask for card details, an OTP or your UPI PIN. <Link href="/how-to-order">How ordering works</Link>
+        Next you&apos;ll pay by UPI (Google Pay, PhonePe, Paytm, BHIM or any UPI app). We never ask for card details, an OTP or your UPI PIN. <Link href="/try-customise#how-to-order">How ordering works</Link>
       </p>
     </form>
   );

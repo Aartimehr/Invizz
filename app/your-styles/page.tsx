@@ -45,7 +45,7 @@ const testimonials = [
   { name: "Clara T.", location: "Austin, TX", quote: "I wore the Daylight Dress three times in one week. It’s the kind of piece that makes an ordinary day feel special.", initials: "CT" },
   { name: "Jules A.", location: "Portland, OR", quote: "Beautifully made without feeling precious. These are the pieces I reach for when I want to feel like myself.", initials: "JA" },
   { name: "Sana K.", location: "Chicago, IL", quote: "The details are so thoughtful. I love that everything feels considered but still completely effortless.", initials: "SK" },
-  { name: "Ellie W.", location: "London, UK", quote: "My new favourite place to find forever pieces. The whole experience feels warm, honest and very Invizz.", initials: "EW" },
+  { name: "Ellie W.", location: "London, UK", quote: "My new favourite place to find forever pieces. The whole experience feels warm, honest and very Invidzz.", initials: "EW" },
 ];
 
 function SectionTitle({ kicker, title, note }: { kicker: string; title: string; note?: string }) {
@@ -65,7 +65,7 @@ export default function YourStylesPage() {
     <main>
       <section className="page-hero page-wrap">
         <div>
-          <p className="eyebrow">The Invizz collection / 2025</p>
+          <p className="eyebrow">The Invidzz collection / 2025</p>
           <h1>Find your<br /><em>own kind of style.</em></h1>
         </div>
         <p className="page-hero-note">A considered collection for all the ways you show up. Take a look around, try something on, make it yours.</p>
@@ -136,7 +136,7 @@ export default function YourStylesPage() {
 
       <section className="testimonials-section">
         <div className="page-wrap">
-          <SectionTitle kicker="Kind words, real people" title="What Users Say About Us" note="A few notes from the Invizz community. We think they say it better than we could." />
+          <SectionTitle kicker="Kind words, real people" title="What Users Say About Us" note="A few notes from the Invidzz community. We think they say it better than we could." />
           <div className="testimonial-grid">
             {testimonials.map((person) => (
               <article className="testimonial-card" key={person.name}>

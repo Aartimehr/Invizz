@@ -1,7 +1,7 @@
 // Everything a customer uses to check we're real lives here.
 // Replace every placeholder before sharing the site.
 export const store = {
-  name: "Invizz",
+  name: "Invidzz",
   // Country code + number, digits only (no "+", spaces or dashes).
   whatsappNumber: "917827351031",
   whatsappDisplay: "+91 78273 51031",

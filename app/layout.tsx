@@ -17,10 +17,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Invizz — Wear what feels like you",
-    template: "%s | Invizz",
+    default: "Invidzz — Wear what feels like you",
+    template: "%s | Invidzz",
   },
-  description: "Thoughtful essentials, unexpected details, and a wardrobe that feels like you. Discover Invizz.",
+  description: "Thoughtful essentials, unexpected details, and a wardrobe that feels like you. Discover Invidzz.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

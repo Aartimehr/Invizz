@@ -53,7 +53,7 @@ export default function Home() {
           <h2>Good style isn&apos;t found.<br /><em>It&apos;s felt.</em></h2>
         </div>
         <p className="intro-copy">
-          Invizz is a little reminder to dress for yourself. We bring together
+          Invidzz is a little reminder to dress for yourself. We bring together
           considered pieces, honest craft and the freedom to make every look
           your own.
         </p>
@@ -69,7 +69,7 @@ export default function Home() {
           />
         </div>
         <div className="feature-copy">
-          <p className="eyebrow">The Invizz edit / 01</p>
+          <p className="eyebrow">The Invidzz edit / 01</p>
           <h2>Style is personal.<br /><em>Let&apos;s keep it that way.</em></h2>
           <p>
             From everyday layers to the pieces you save for a reason, discover

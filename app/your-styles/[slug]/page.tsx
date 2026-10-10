@@ -38,7 +38,7 @@ export default async function ProductPage({ params }: PageProps<"/your-styles/[s
         </div>
         <div className="product-detail">
           <Link className="product-back" href="/your-styles"><span aria-hidden="true">←</span> All styles</Link>
-          <p className="eyebrow">The Invizz collection</p>
+          <p className="eyebrow">The Invidzz collection</p>
           <h1>{product.name}</h1>
           <p className="product-detail-price">{formatPrice(product.price)}</p>
           <p className="product-detail-copy">{product.description}</p>

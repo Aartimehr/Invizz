@@ -9,6 +9,8 @@ const nextConfig: NextConfig = {
     // Port-sharing tunnels.
     "**.devtunnels.ms", "**.ngrok-free.app", "**.ngrok.app", "**.trycloudflare.com", "**.app.github.dev", "**.loca.lt",
   ],
+  // The page was called "How to Order" until October 2026; old links and bookmarks still land in the right place.
+  redirects: () => [{ source: "/how-to-order", destination: "/try-customise", permanent: true }],
   images: {
     remotePatterns: [
       {

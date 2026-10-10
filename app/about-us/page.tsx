@@ -8,7 +8,7 @@ export default function AboutUsPage() {
         <div>
           <p className="eyebrow">A little about us</p>
           <h1>We’re here for<br /><em>the feeling.</em></h1>
-          <p>That moment when you get dressed and it just feels right. That’s where Invizz begins.</p>
+          <p>That moment when you get dressed and it just feels right. That’s where Invidzz begins.</p>
         </div>
         <div className="about-hero-photo">
           <Image src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1500&q=85" alt="A confident expression of personal style" fill priority sizes="(max-width: 760px) 100vw, 55vw" />
@@ -20,12 +20,12 @@ export default function AboutUsPage() {
       <section className="about-story">
         <div className="page-wrap about-story-inner">
           <p className="eyebrow">The story so far</p>
-          <h2>Invizz started with a simple thought:<br /><em>getting dressed should feel like you.</em></h2>
+          <h2>Invidzz started with a simple thought:<br /><em>getting dressed should feel like you.</em></h2>
           <div className="about-story-bottom">
             <span className="story-initial" aria-hidden="true">I.</span>
             <div>
               <p>Somewhere along the way, style started to feel like keeping up. We wanted to bring it back to something more personal: the pieces you reach for because they feel good, fit your life and help you show up as yourself.</p>
-              <p>So we started making the kind of clothes we wanted to wear—thoughtful, versatile and quietly full of character. Invizz is still that idea, shared with a growing community of people who believe the best style is your own.</p>
+              <p>So we started making the kind of clothes we wanted to wear—thoughtful, versatile and quietly full of character. Invidzz is still that idea, shared with a growing community of people who believe the best style is your own.</p>
               <Link className="text-link" href="/your-styles">Come find your favourites <span aria-hidden="true">↗</span></Link>
             </div>
           </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -16,7 +17,7 @@ const links = [
     ],
   },
   { href: "/our-promises", label: "Our Promises" },
-  { href: "/how-to-order", label: "How to Order" },
+  { href: "/try-customise", label: "Try Customise" },
   { href: "/about-us", label: "About Us" },
 ];
 
@@ -28,9 +29,8 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="header-inner page-wrap">
-        <Link className="brand" href="/" aria-label="Invizz home" onClick={() => setMenuOpen(false)}>
-          <span className="brand-mark" aria-hidden="true">i</span>
-          <span>invizz<span className="brand-period">.</span></span>
+        <Link className="brand" href="/" aria-label="Invidzz home" onClick={() => setMenuOpen(false)}>
+          <Image className="brand-logo" src="/invidzz-logo.png" alt="" width={663} height={231} priority />
         </Link>
         <button
           className={`menu-toggle${menuOpen ? " is-open" : ""}`}

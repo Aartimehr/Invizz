@@ -33,13 +33,13 @@ export default function PromisesPage() {
     <main>
       <section className="promise-hero page-wrap">
         <div className="promise-hero-copy">
-          <p className="eyebrow">The Invizz point of view</p>
+          <p className="eyebrow">The Invidzz point of view</p>
           <h1>Good style.<br /><em>Good intentions.</em></h1>
           <p>What we make matters. How we make it matters more. These are the things we’ll always stand by.</p>
         </div>
         <div className="promise-hero-image">
           <Image src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1400&q=85" alt="Thoughtful everyday fashion with timeless details" fill sizes="(max-width: 760px) 100vw, 50vw" />
-          <span>Wear well, feel good / Invizz</span>
+          <span>Wear well, feel good / Invidzz</span>
         </div>
       </section>
 

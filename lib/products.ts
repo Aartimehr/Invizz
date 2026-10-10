@@ -63,7 +63,7 @@ export const products: Product[] = [
 ];
 
 export const collections: { id: Collection; kicker: string; title: string; note: string }[] = [
-  { id: "exclusives", kicker: "Only at Invizz", title: "Our Exclusives", note: "Small runs you won’t find anywhere else. When they’re gone, they’re gone." },
+  { id: "exclusives", kicker: "Only at Invidzz", title: "Our Exclusives", note: "Small runs you won’t find anywhere else. When they’re gone, they’re gone." },
   { id: "new-in", kicker: "Fresh from the studio", title: "New In", note: "The latest pieces to land, straight from the cutting table." },
   { id: "essentials", kicker: "The ones you live in", title: "Everyday Essentials", note: "The pieces that do the quiet work in a wardrobe, made to last." },
 ];

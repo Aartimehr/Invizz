@@ -1,10 +1,11 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const footerLinks = [
   { href: "/", label: "Home" },
   { href: "/your-styles", label: "Your Styles" },
   { href: "/our-promises", label: "Our Promises" },
-  { href: "/how-to-order", label: "How to Order" },
+  { href: "/try-customise", label: "Try Customise" },
   { href: "/about-us", label: "About Us" },
 ];
 
@@ -14,9 +15,8 @@ export function SiteFooter() {
       <div className="page-wrap">
         <div className="footer-main">
           <div className="footer-brand-block">
-            <Link className="brand footer-brand" href="/" aria-label="Invizz home">
-              <span className="brand-mark" aria-hidden="true">i</span>
-              <span>invizz<span className="brand-period">.</span></span>
+            <Link className="brand footer-brand" href="/" aria-label="Invidzz home">
+              <Image className="brand-logo" src="/invidzz-logo.png" alt="" width={663} height={231} />
             </Link>
             <p>Considered clothes for wherever life takes you. Made with care, worn your way.</p>
           </div>
@@ -28,7 +28,7 @@ export function SiteFooter() {
           </div>
           <div className="footer-social-block">
             <p className="footer-label">Stay in the know</p>
-            <p>Good things, occasionally. Follow along for a little more Invizz.</p>
+            <p>Good things, occasionally. Follow along for a little more Invidzz.</p>
             <div className="social-links">
               <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram">IG <span aria-hidden="true">↗</span></a>
               <a href="https://www.pinterest.com/" target="_blank" rel="noreferrer" aria-label="Pinterest">PIN <span aria-hidden="true">↗</span></a>
@@ -37,7 +37,7 @@ export function SiteFooter() {
           </div>
         </div>
         <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} Invizz. Made with intention.</span>
+          <span>© {new Date().getFullYear()} Invidzz. Made with intention.</span>
           <span>Wear what feels like you.</span>
         </div>
       </div>

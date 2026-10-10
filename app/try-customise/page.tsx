@@ -1,43 +1,39 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { DesignStudio } from "@/components/design-studio";
 import { UpiApps } from "@/components/upi-apps";
 import { store } from "@/lib/store";
 
 export const metadata: Metadata = {
-  title: "How ordering works",
-  description: "How to order from Invizz, how UPI payment works, and how to check it's really us before you pay.",
+  title: "Try Customise",
+  description: "Draw the piece you want to wear and send it to Invidzz. See how a customised order works and how to check it's really us before you pay.",
 };
 
 const steps = [
   {
     number: "01",
-    title: "Pick your piece",
-    description: "Choose your size and tell us where to send it. We only ask for what we need to deliver your order.",
-    detail: "No account needed",
+    title: "Draw it",
+    description: "Pick a piece and a fabric colour, then draw or paint your idea on the canvas. A rough sketch is enough.",
   },
   {
     number: "02",
-    title: "Pay by UPI",
-    description: `At checkout you'll see a QR code with your exact amount filled in. Scan it with any UPI app. Your app will show the name ${store.upiPayeeName} before you pay.`,
-    detail: "Any UPI app",
+    title: "Tell us your size",
+    description: "Add your size, name and mobile number, and any notes about fabric, fit or where a print should go.",
   },
   {
     number: "03",
-    title: "Send us your order",
-    description: `Tap "I've paid" and a ready-made WhatsApp message with your order opens for you to send to ${store.whatsappDisplay}. You message us; we never message you first asking for money.`,
-    detail: "You start the chat",
+    title: "Send it on WhatsApp",
+    description: `Save your drawing, then send it with the ready-made message to ${store.whatsappDisplay}. You message us; we never message you first asking for money.`,
   },
   {
     number: "04",
-    title: "We confirm, personally",
-    description: `A real person checks your payment and replies within ${store.confirmWithin}, quoting your order reference, with your receipt and delivery date.`,
-    detail: "Receipt on WhatsApp",
+    title: "We reply with a price",
+    description: "A real person looks at your drawing and replies in the same chat, quoting your design reference, with the price and how long it will take. If it's something we can't make, we say so. Nothing is paid until you say yes.",
   },
   {
     number: "05",
-    title: "On its way",
-    description: `We dispatch in ${store.dispatchDays} working days and send you the tracking number with a photo of your packed parcel.`,
-    detail: "Tracked delivery",
+    title: "Pay by UPI, and we make it",
+    description: `Once you agree, pay by UPI. Your app will show the name ${store.upiPayeeName} before you pay. We check the payment, send your receipt and start making your piece.`,
   },
 ];
 
@@ -48,30 +44,31 @@ const checks = [
   "We never send a QR or link to “receive” a refund. Refunds arrive in your account on their own; you never scan or approve anything to get money.",
 ];
 
-export default function HowToOrderPage() {
+export default function TryCustomisePage() {
   return (
     <main>
       <section className="page-hero page-wrap">
         <div>
-          <p className="eyebrow">Ordering, plainly explained</p>
-          <h1>How ordering<br /><em>works here.</em></h1>
+          <p className="eyebrow">Made your way</p>
+          <h1>Try<br /><em>customise.</em></h1>
         </div>
-        <p className="page-hero-note">We&apos;re a small, new label. Until our full online checkout is live, we take payment by UPI and confirm every order ourselves on WhatsApp. Here is exactly what to expect.</p>
+        <p className="page-hero-note">Have a piece in mind that isn&apos;t in our collection? Draw it here and send it to us. We reply on WhatsApp with a price before you pay anything.</p>
       </section>
 
-      <section className="promise-list-section">
-        <div className="page-wrap">
-          <div className="section-title-row"><div><p className="eyebrow">From checkout to your door</p><h2>Five simple steps</h2></div><p className="section-note">No surprises, and a real person at every step.</p></div>
-          <div className="promise-list">
+      <section className="custom-section page-wrap">
+        <DesignStudio />
+        <aside className="custom-steps" id="how-to-order">
+          <p className="eyebrow">From your drawing to your door</p>
+          <h2>How to order</h2>
+          <ol>
             {steps.map((step) => (
-              <article className="promise-item" key={step.number}>
-                <span className="promise-number">{step.number}</span>
+              <li key={step.number}>
+                <span>{step.number}</span>
                 <div><h3>{step.title}</h3><p>{step.description}</p></div>
-                <span className="promise-detail">{step.detail}</span>
-              </article>
+              </li>
             ))}
-          </div>
-        </div>
+          </ol>
+        </aside>
       </section>
 
       <section className="trust-section page-wrap">
