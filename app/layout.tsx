@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import { CartProvider } from "@/components/cart-provider";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -15,12 +15,22 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// Headlines on the homepage, header and footer.
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
+  weight: "400",
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
+  // The address the site is published at, so shared links get full picture addresses.
+  metadataBase: new URL("https://invizz.vercel.app"),
   title: {
-    default: "Invidzz — Wear what feels like you",
+    default: "Invidzz | Wear What Feels Like You",
     template: "%s | Invidzz",
   },
-  description: "Thoughtful essentials, unexpected details, and a wardrobe that feels like you. Discover Invidzz.",
+  description: "Discover Invidzz, a contemporary fashion label built around original designs, individuality, and a more personal approach to style.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -28,7 +38,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <CartProvider>

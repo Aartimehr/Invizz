@@ -26,7 +26,7 @@ Planned next stage, not started: sole-proprietor registration (Udyam), a current
 - Next.js 16.3 App Router, React 19.2, TypeScript, Tailwind 4 (only `@import "tailwindcss"`; all styling is hand-written classes in `app/globals.css`).
 - `qrcode.react` for the UPI QR. No other runtime dependencies.
 - **Read `AGENTS.md` first:** this Next.js version differs from older ones; check `node_modules/next/dist/docs/` before using an API.
-- **No backend.** No API routes, server actions, database, auth or environment variables. Every page is static.
+- **Almost no backend.** No server actions, database or auth. Every page is static. The one exception is `app/api/early-access/route.ts`, which receives the homepage email sign-up and forwards it to the address in the `EARLY_ACCESS_WEBHOOK_URL` environment variable (the only one). While that is unset it answers "not-configured" and the form tells the visitor the list is not open and offers WhatsApp instead. The form must never show success unless the mailing list accepted the address.
 
 ## Commands
 
@@ -53,8 +53,18 @@ Planned next stage, not started: sole-proprietor registration (Udyam), a current
 | `components/upi-apps.tsx` | Google Pay, PhonePe, Paytm icons (BHIM is a text label) |
 | `app/globals.css` | All styles, one rule per line, mobile overrides in the `max-width: 680px` block |
 | `public/invidzz-logo.png` | The logo, cropped from the owner's artwork with its dark green background |
+| `app/page.tsx` | The homepage (redesigned 2026-10-11 as a brand-launch teaser): hero, belief, collection teaser, customisation, manifesto, early access. Its styles are the `.hm-*` and `.early-*` classes |
+| `components/early-access-form.tsx` | The homepage email sign-up form |
+| `components/reveal-on-scroll.tsx` | Homepage motion: fades each `.reveal` block up as it scrolls into view. The opening animation and the timings are in `app/globals.css` under `prefers-reduced-motion: no-preference` |
+| `public/home/*.jpg` | Homepage pictures. Six are pencil-sketch versions (made 2026-10-11) of temporary Unsplash photographs; `customise.jpg` is still the photograph, at the owner's request. `hero.jpg` is a faceless summer-dress sketch traced from the same Unsplash photo as the "Daylight Dress" product and `belief.jpg` is the same kind of sketch traced from the "Poppy Day Dress" product photo (the earlier winter pictures are `hero-winter*.jpg` and `belief-winter*.jpg` in `photo-originals/home`). Replace one by saving the new picture over the same file name |
+| `public/pages/*.jpg` | The same kind of sketch: `about-1.jpg` for the top of `/about-us`, `promises.jpg` for `/our-promises` |
+| `app/about-us/page.tsx` | Our Story (redesigned 2026-10-11 from the owner's copy and reference picture): dark and ivory bands, styles are the `.st-*` classes. It describes customisation as planned, not available, and must not promise that any uploaded design can be made |
+| `components/story-interactive.tsx` | The interactive parts of Our Story: style picker, picture teaser, the "details" tablet preview and the four-stage timeline. Nothing is saved or sent; a chosen picture never leaves the visitor's browser |
+| `photo-originals/` | The original photographs behind every sketch, and `sketch.js`, the script that converts a photograph (run it with `NODE_PATH=node_modules`). Not published. Product photos and the pictures on the locked pages are still photographs loaded from Unsplash |
 
 Routes: `/`, `/your-styles`, `/your-styles/men`, `/your-styles/women`, `/your-styles/[slug]`, `/try-customise`, `/our-promises`, `/about-us`, `/thank-you`. `/how-to-order` was renamed to `/try-customise` on 2026-10-11 and redirects there (`next.config.ts`).
+
+**`/your-styles`, `/your-styles/men`, `/your-styles/women` and `/try-customise` are locked (2026-10-11):** their sections are blurred and unusable behind a "Locked for now" notice that points to early access (`components/locked-notice.tsx`, `.locked-*` classes). The comment at the top of each page (and of `components/collection-page.tsx` for men and women) says how to unlock it. The single product pages are not locked: no page links to them any more, but a direct address still opens one and its order form works. Their "How ordering works" link points to the locked `/try-customise#how-to-order`.
 
 ## How an order works
 
@@ -87,12 +97,17 @@ The single product page (`/your-styles/[slug]`) still uses `OrderForm`, which do
 - `lib/store.ts` still has placeholders: `upiId`, `upiPayeeName`, `ownerName`, `city`, `email`. The WhatsApp number is real.
 - Policies in `lib/store.ts` (free delivery, 12-hour confirmation, 2–4 day dispatch, 3-day refund, 7-day returns) were drafted by Claude and need the owner's confirmation.
 - Prices, sizes and product photos (Unsplash) are placeholders.
-- Testimonials on `/your-styles` are invented, with US and UK locations. Replace with real ones or remove.
-- Footer social links point to the Instagram, Pinterest and TikTok home pages.
+- The testimonials section on `/your-styles` is commented out (2026-10-11) because its reviews are invented, with US and UK locations. Bring it back only with real ones.
+- The footer shows social links only for accounts with a real address in `store.social` (`lib/store.ts`); all are empty.
+- The early-access sign-up is not connected: set `EARLY_ACCESS_WEBHOOK_URL` in Vercel to a mailing-list or form service address that accepts a JSON `{ email }` POST.
+- The homepage pictures in `public/home` are sketches traced from temporary Unsplash photographs, and the collection teaser says so ("Mood imagery, for now").
+- `metadataBase` in `app/layout.tsx` is `https://invizz.vercel.app`; change it if the site moves to its own domain.
 - The favicon is still the default.
 
 ## Conventions
 
+- Palette (`:root` in `app/globals.css`): warm ivory `--paper`, soft cream `--cream`, charcoal `--ink`, taupe `--taupe` (decoration only; use `--stone` for small text), burgundy `--burgundy` as the homepage accent. Older pages still use `--olive` and `--rust` accents and Georgia headings; the homepage, header and footer use `--font-display` (Instrument Serif).
+- The homepage makes no claims about products, prices or launch dates, and none of its pictures is presented as a piece from the collection.
 - Brand name in text is "Invidzz"; the logo is the image, not text.
 - Prices are whole rupees as numbers; always display with `formatPrice`.
 - Customer-facing copy is plain and specific, and must not promise anything `lib/store.ts` does not back up.

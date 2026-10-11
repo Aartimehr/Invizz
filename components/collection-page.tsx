@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LockedNotice } from "@/components/locked-notice";
 import { ShopCard } from "@/components/shop-card";
 import { collections, getCollection, type Gender } from "@/lib/products";
 
@@ -11,7 +12,11 @@ export function CollectionPage({ gender }: { gender: Gender }) {
   const page = copy[gender];
 
   return (
-    <main>
+    <main className="locked-page">
+      {/* The men and women pages are locked until the first drop: everything in locked-content is blurred and cannot be clicked.
+          To unlock them, remove the LockedNotice and the locked-content wrapper (keep what is inside it). */}
+      <LockedNotice text="The first drop is on its way. This page opens when it arrives." />
+      <div className="locked-content" inert aria-hidden="true">
       <section className="page-hero page-wrap">
         <div>
           <p className="eyebrow">The Invidzz collection / {page.label}</p>
@@ -41,6 +46,7 @@ export function CollectionPage({ gender }: { gender: Gender }) {
           </section>
         );
       })}
+      </div>
     </main>
   );
 }

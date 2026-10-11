@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { LockedNotice } from "@/components/locked-notice";
 import { formatPrice, topLaunches } from "@/lib/products";
 
 const styles = [
@@ -40,13 +41,14 @@ const styles = [
   },
 ];
 
-const testimonials = [
-  { name: "Maya R.", location: "Brooklyn, NY", quote: "It feels like someone finally made the wardrobe I’ve been looking for. The fit, the fabric, all of it just works.", initials: "MR" },
-  { name: "Clara T.", location: "Austin, TX", quote: "I wore the Daylight Dress three times in one week. It’s the kind of piece that makes an ordinary day feel special.", initials: "CT" },
-  { name: "Jules A.", location: "Portland, OR", quote: "Beautifully made without feeling precious. These are the pieces I reach for when I want to feel like myself.", initials: "JA" },
-  { name: "Sana K.", location: "Chicago, IL", quote: "The details are so thoughtful. I love that everything feels considered but still completely effortless.", initials: "SK" },
-  { name: "Ellie W.", location: "London, UK", quote: "My new favourite place to find forever pieces. The whole experience feels warm, honest and very Invidzz.", initials: "EW" },
-];
+// Invented placeholders, kept for the hidden testimonials section below.
+// const testimonials = [
+//   { name: "Maya R.", location: "Brooklyn, NY", quote: "It feels like someone finally made the wardrobe I’ve been looking for. The fit, the fabric, all of it just works.", initials: "MR" },
+//   { name: "Clara T.", location: "Austin, TX", quote: "I wore the Daylight Dress three times in one week. It’s the kind of piece that makes an ordinary day feel special.", initials: "CT" },
+//   { name: "Jules A.", location: "Portland, OR", quote: "Beautifully made without feeling precious. These are the pieces I reach for when I want to feel like myself.", initials: "JA" },
+//   { name: "Sana K.", location: "Chicago, IL", quote: "The details are so thoughtful. I love that everything feels considered but still completely effortless.", initials: "SK" },
+//   { name: "Ellie W.", location: "London, UK", quote: "My new favourite place to find forever pieces. The whole experience feels warm, honest and very Invidzz.", initials: "EW" },
+// ];
 
 function SectionTitle({ kicker, title, note }: { kicker: string; title: string; note?: string }) {
   return (
@@ -62,7 +64,11 @@ function SectionTitle({ kicker, title, note }: { kicker: string; title: string; 
 
 export default function YourStylesPage() {
   return (
-    <main>
+    <main className="locked-page">
+      {/* The page is locked until the first drop: everything in locked-content is blurred and cannot be clicked.
+          To unlock it, remove the LockedNotice and the locked-content wrapper (keep what is inside it). */}
+      <LockedNotice text="The first drop is on its way. This page opens when it arrives." />
+      <div className="locked-content" inert aria-hidden="true">
       <section className="page-hero page-wrap">
         <div>
           <p className="eyebrow">The Invidzz collection / 2025</p>
@@ -134,6 +140,7 @@ export default function YourStylesPage() {
         <p className="video-note">A little film about the people, process and purpose behind each piece. <span>Video coming soon.</span></p>
       </section>
 
+      {/* Hidden until we have real customer reviews.
       <section className="testimonials-section">
         <div className="page-wrap">
           <SectionTitle kicker="Kind words, real people" title="What Users Say About Us" note="A few notes from the Invidzz community. We think they say it better than we could." />
@@ -148,6 +155,8 @@ export default function YourStylesPage() {
           </div>
         </div>
       </section>
+      */}
+      </div>
     </main>
   );
 }

@@ -7,7 +7,6 @@ import { useState } from "react";
 import { useCart } from "@/components/cart-provider";
 
 const links = [
-  { href: "/", label: "Home" },
   {
     href: "/your-styles",
     label: "Your Styles",
@@ -16,10 +15,12 @@ const links = [
       { href: "/your-styles/women", label: "Women" },
     ],
   },
-  { href: "/our-promises", label: "Our Promises" },
+  { href: "/about-us", label: "Our Story" },
   { href: "/try-customise", label: "Try Customise" },
-  { href: "/about-us", label: "About Us" },
 ];
+
+// The sign-up section on the homepage.
+const earlyAccess = "/#early-access";
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -76,12 +77,14 @@ export function SiteHeader() {
               </div>
             );
           })}
+          {/* On phones the button in the header bar is hidden, so the menu carries the link instead. */}
+          <Link className="nav-link nav-link-phone" href={earlyAccess} onClick={() => setMenuOpen(false)}>Early Access</Link>
         </nav>
         <div className="header-actions">
           <button className="cart-button" type="button" aria-label={`Open your bag, ${count} ${count === 1 ? "piece" : "pieces"}`} onClick={openCart}>
             Bag <span>{count}</span>
           </button>
-          <Link className="header-cta" href="/your-styles">Explore the edit <span aria-hidden="true">↗</span></Link>
+          <Link className="header-cta" href={earlyAccess}>Early Access</Link>
         </div>
       </div>
     </header>

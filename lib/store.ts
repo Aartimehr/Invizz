@@ -17,6 +17,8 @@ export const store = {
   dispatchDays: "2–4",
   refundDays: 3,
   returnWindowDays: 7,
+  // Full addresses of our real accounts, e.g. "https://www.instagram.com/yourhandle". An empty one is left out of the footer.
+  social: { Instagram: "", Pinterest: "", YouTube: "" },
 };
 
 export function upiPaymentLink(amount: number, reference: string) {

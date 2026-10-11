@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { DesignStudio } from "@/components/design-studio";
+import { LockedNotice } from "@/components/locked-notice";
 import { UpiApps } from "@/components/upi-apps";
 import { store } from "@/lib/store";
 
@@ -46,7 +47,11 @@ const checks = [
 
 export default function TryCustomisePage() {
   return (
-    <main>
+    <main className="locked-page">
+      {/* The page is locked for now: everything in locked-content is blurred and cannot be used.
+          To unlock it, remove the LockedNotice and the locked-content wrapper (keep what is inside it). */}
+      <LockedNotice text="Designing your own piece is on its way. This page opens when it is ready." />
+      <div className="locked-content" inert aria-hidden="true">
       <section className="page-hero page-wrap">
         <div>
           <p className="eyebrow">Made your way</p>
@@ -107,6 +112,7 @@ export default function TryCustomisePage() {
         <h2>Find the piece<br /><em>that feels like you.</em></h2>
         <Link className="button button-light" href="/your-styles">Explore the collection <span aria-hidden="true">↗</span></Link>
       </section>
+      </div>
     </main>
   );
 }
