@@ -52,7 +52,8 @@ Planned next stage, not started: sole-proprietor registration (Udyam), a current
 | `components/shop-card.tsx`, `collection-page.tsx` | Product cards with Buy now and Add to cart; the men and women pages |
 | `components/upi-apps.tsx` | Google Pay, PhonePe, Paytm icons (BHIM is a text label) |
 | `app/globals.css` | All styles, one rule per line, mobile overrides in the `max-width: 680px` block |
-| `public/invidzz-logo.png` | The logo, cropped from the owner's artwork with its dark green background |
+| `public/invidzz-logo-2026.png` | The logo (changed 2026-10-11): the IN monogram above the INVIDZZ wordmark, dark ink on a see-through background, made from the owner's artwork in `photo-originals/logo`. The footer flips it to ivory with a CSS filter. Give a future logo a new file name so browsers do not keep showing the old one |
+| `app/icon.png` | The browser-tab icon: the IN monogram on cream |
 | `app/page.tsx` | The homepage (redesigned 2026-10-11 as a brand-launch teaser): hero, belief, collection teaser, customisation, manifesto, early access. Its styles are the `.hm-*` and `.early-*` classes |
 | `components/early-access-form.tsx` | The homepage email sign-up form |
 | `components/reveal-on-scroll.tsx` | Homepage motion: fades each `.reveal` block up as it scrolls into view. The opening animation and the timings are in `app/globals.css` under `prefers-reduced-motion: no-preference` |
@@ -102,7 +103,7 @@ The single product page (`/your-styles/[slug]`) still uses `OrderForm`, which do
 - The early-access sign-up is not connected: set `EARLY_ACCESS_WEBHOOK_URL` in Vercel to a mailing-list or form service address that accepts a JSON `{ email }` POST.
 - The homepage pictures in `public/home` are sketches traced from temporary Unsplash photographs, and the collection teaser says so ("Mood imagery, for now").
 - `metadataBase` in `app/layout.tsx` is `https://invizz.vercel.app`; change it if the site moves to its own domain.
-- The favicon is still the default.
+- The admin portal (`../Invidzz-admin`) still shows the old logo.
 
 ## Conventions
 

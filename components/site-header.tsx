@@ -31,7 +31,7 @@ export function SiteHeader() {
     <header className="site-header">
       <div className="header-inner page-wrap">
         <Link className="brand" href="/" aria-label="Invidzz home" onClick={() => setMenuOpen(false)}>
-          <Image className="brand-logo" src="/invidzz-logo.png" alt="" width={663} height={231} priority />
+          <Image className="brand-logo" src="/invidzz-logo-2026.png" alt="" width={773} height={440} priority />
         </Link>
         <button
           className={`menu-toggle${menuOpen ? " is-open" : ""}`}

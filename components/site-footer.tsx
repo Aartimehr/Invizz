@@ -20,7 +20,7 @@ export function SiteFooter() {
         <div className="footer-main">
           <div className="footer-brand-block">
             <Link className="brand footer-brand" href="/" aria-label="Invidzz home">
-              <Image className="brand-logo" src="/invidzz-logo.png" alt="" width={663} height={231} />
+              <Image className="brand-logo" src="/invidzz-logo-2026.png" alt="" width={773} height={440} />
             </Link>
             <p className="footer-tagline">Wear what feels like you.</p>
           </div>

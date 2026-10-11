@@ -49,7 +49,7 @@ h1 em, h2 em, h3 em, blockquote em { font-weight: 400; }
 .site-header { position: relative; z-index: 20; height: 78px; background: var(--paper); border-bottom: 1px solid rgba(36,37,31,.08); }
 .header-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; }
 .brand { display: inline-flex; align-items: center; }
-.brand-logo { width: auto; height: 46px; display: block; }
+.brand-logo { width: auto; height: 58px; display: block; }
 .main-navigation { display: flex; align-items: center; gap: clamp(22px, 3.5vw, 52px); margin-left: 50px; }
 .nav-link { position: relative; padding: 10px 0; color: #68685f; font-size: 12px; transition: color .2s ease; }
 .nav-link::after { position: absolute; right: 0; bottom: 3px; left: 0; height: 1px; background: var(--rust); content: ""; transform: scaleX(0); transform-origin: left; transition: transform .2s ease; }
@@ -146,7 +146,8 @@ h1 em, h2 em, h3 em, blockquote em { font-weight: 400; }
 
 .site-footer { padding: 76px 0 0; background: var(--ink); color: #f5f3ec; }
 .footer-main { display: grid; grid-template-columns: 1.5fr .8fr 1fr; gap: 80px; padding-bottom: 55px; }
-.footer-brand .brand-logo { height: 54px; }
+/* The logo artwork is dark ink on a see-through background; on the dark footer it is flipped to ivory. */
+.footer-brand .brand-logo { height: 96px; filter: invert(1) brightness(1.6); }
 .footer-brand-block > p { margin: 22px 0 0; font-family: var(--font-display); font-size: 28px; font-style: italic; line-height: 1.2; }
 .footer-social-block > p:not(.footer-label) { margin: 0; color: rgba(245,243,236,.7); font-size: 13px; line-height: 1.9; }
 .footer-contact { border-bottom: 1px solid rgba(245,243,236,.4); color: #f5f3ec; transition: color .2s ease; }
@@ -682,7 +683,7 @@ a.order-submit { cursor: pointer; }
   .page-wrap { width: calc(100% - 40px); }
   .site-header { height: 68px; }
   .header-inner { position: relative; }
-  .brand-logo { height: 40px; }
+  .brand-logo { height: 50px; }
   .menu-toggle { width: 40px; height: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; margin-left: auto; border: 0; background: transparent; cursor: pointer; }
   .menu-toggle span { width: 20px; height: 1px; display: block; background: var(--ink); transition: transform .2s ease; }
   .menu-toggle.is-open span:first-child { transform: translateY(3.5px) rotate(45deg); }
