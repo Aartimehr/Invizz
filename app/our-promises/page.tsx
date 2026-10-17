@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-// A pencil-sketch version of a temporary Unsplash photograph. The original is in photo-originals/pages.
-import heroSketch from "@/public/pages/promises.jpg";
+// A coloured illustration made from a temporary Unsplash photograph. The original is in photo-originals/pages.
+import heroArt from "@/public/pages/promises.jpg";
 
 const promises = [
   {
@@ -40,7 +40,7 @@ export default function PromisesPage() {
           <p>What we make matters. How we make it matters more. These are the things we’ll always stand by.</p>
         </div>
         <div className="promise-hero-image">
-          <Image src={heroSketch} alt="Thoughtful everyday fashion with timeless details" fill sizes="(max-width: 760px) 100vw, 50vw" />
+          <Image src={heroArt} alt="A coloured illustration of a woman in a pale blue coat and white boots in a city square, with pigeons around her" fill sizes="(max-width: 760px) 100vw, 50vw" />
           <span>Wear well, feel good / Invidzz</span>
         </div>
       </section>

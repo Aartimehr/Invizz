@@ -2,7 +2,7 @@
 
 Loaded into every Claude Code session through `CLAUDE.md`. Keep it current: when a decision, flow or placeholder below changes, update this file in the same change.
 
-Last reviewed: 2026-10-11.
+Last reviewed: 2026-10-17.
 
 ## What this is
 
@@ -57,15 +57,15 @@ Planned next stage, not started: sole-proprietor registration (Udyam), a current
 | `app/page.tsx` | The homepage (redesigned 2026-10-11 as a brand-launch teaser): hero, belief, collection teaser, customisation, manifesto, early access. Its styles are the `.hm-*` and `.early-*` classes |
 | `components/early-access-form.tsx` | The homepage email sign-up form |
 | `components/reveal-on-scroll.tsx` | Homepage motion: fades each `.reveal` block up as it scrolls into view. The opening animation and the timings are in `app/globals.css` under `prefers-reduced-motion: no-preference` |
-| `public/home/*.jpg` | Homepage pictures. Six are pencil-sketch versions (made 2026-10-11) of temporary Unsplash photographs; `customise.jpg` is still the photograph, at the owner's request. `hero.jpg` is a faceless summer-dress sketch traced from the same Unsplash photo as the "Daylight Dress" product and `belief.jpg` is the same kind of sketch traced from the "Poppy Day Dress" product photo (the earlier winter pictures are `hero-winter*.jpg` and `belief-winter*.jpg` in `photo-originals/home`). Replace one by saving the new picture over the same file name |
-| `public/pages/*.jpg` | The same kind of sketch: `about-1.jpg` for the top of `/about-us`, `promises.jpg` for `/our-promises` |
+| `public/home/*.jpg` | Homepage pictures. Six are coloured illustrations (pencil lines over a watercolour-style wash, made 2026-10-17; pencil sketches before that) of temporary Unsplash photographs; `customise.jpg` is still the photograph, at the owner's request. `hero.jpg` is a faceless summer-dress illustration made from the same Unsplash photo as the "Daylight Dress" product and `belief.jpg` is the same kind of illustration made from the "Poppy Day Dress" product photo (the earlier winter pictures are `hero-winter*.jpg` and `belief-winter*.jpg` in `photo-originals/home`). Replace one by saving the new picture over the same file name |
+| `public/pages/*.jpg` | The same kind of coloured illustration: `about-1.jpg` for the top of `/about-us`, `promises.jpg` for `/our-promises` |
 | `app/about-us/page.tsx` | Our Story (redesigned 2026-10-11 from the owner's copy and reference picture): dark and ivory bands, styles are the `.st-*` classes. It describes customisation as planned, not available, and must not promise that any uploaded design can be made |
 | `components/story-interactive.tsx` | The interactive parts of Our Story: style picker, picture teaser, the "details" tablet preview and the four-stage timeline. Nothing is saved or sent; a chosen picture never leaves the visitor's browser |
-| `photo-originals/` | The original photographs behind every sketch, and `sketch.js`, the script that converts a photograph (run it with `NODE_PATH=node_modules`). Not published. Product photos and the pictures on the locked pages are still photographs loaded from Unsplash |
+| `photo-originals/` | The original photographs behind every illustration, `illustrate.js` (makes the coloured illustrations used now) and `sketch.js` (the older black-and-white pencil version). Run either as `NODE_PATH=node_modules node photo-originals/illustrate.js <photo> <output>`. Not published. Product photos and the pictures on `/your-styles` and `/try-customise` are still photographs loaded from Unsplash |
 
 Routes: `/`, `/your-styles`, `/your-styles/men`, `/your-styles/women`, `/your-styles/[slug]`, `/try-customise`, `/our-promises`, `/about-us`, `/thank-you`. `/how-to-order` was renamed to `/try-customise` on 2026-10-11 and redirects there (`next.config.ts`).
 
-**`/your-styles`, `/your-styles/men`, `/your-styles/women` and `/try-customise` are locked (2026-10-11):** their sections are blurred and unusable behind a "Locked for now" notice that points to early access (`components/locked-notice.tsx`, `.locked-*` classes). The comment at the top of each page (and of `components/collection-page.tsx` for men and women) says how to unlock it. The single product pages are not locked: no page links to them any more, but a direct address still opens one and its order form works. Their "How ordering works" link points to the locked `/try-customise#how-to-order`.
+**`/your-styles`, `/your-styles/men`, `/your-styles/women` and `/try-customise` were locked on 2026-10-11 and unlocked on 2026-10-17;** all of them are open and usable again. The lock notice is kept for reuse: to lock a page, put `<LockedNotice text="…" />` (`components/locked-notice.tsx`) and a `<div className="locked-content" inert aria-hidden="true">` wrapper around its sections inside `<main className="locked-page">` (styles are the `.locked-*` classes).
 
 ## How an order works
 
@@ -101,7 +101,7 @@ The single product page (`/your-styles/[slug]`) still uses `OrderForm`, which do
 - The testimonials section on `/your-styles` is commented out (2026-10-11) because its reviews are invented, with US and UK locations. Bring it back only with real ones.
 - The footer shows social links only for accounts with a real address in `store.social` (`lib/store.ts`); all are empty.
 - The early-access sign-up is not connected: set `EARLY_ACCESS_WEBHOOK_URL` in Vercel to a mailing-list or form service address that accepts a JSON `{ email }` POST.
-- The homepage pictures in `public/home` are sketches traced from temporary Unsplash photographs, and the collection teaser says so ("Mood imagery, for now").
+- The homepage pictures in `public/home` are illustrations made from temporary Unsplash photographs, and the collection teaser says so ("Mood imagery, for now").
 - `metadataBase` in `app/layout.tsx` is `https://invizz.vercel.app`; change it if the site moves to its own domain.
 - The admin portal (`../Invidzz-admin`) still shows the old logo.
 

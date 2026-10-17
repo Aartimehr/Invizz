@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { EarlyAccessForm } from "@/components/early-access-form";
 import { RevealOnScroll } from "@/components/reveal-on-scroll";
-// Pencil-sketch versions of temporary Unsplash photographs, standing in until our own campaign is shot (customise.jpg is still the photograph).
+// Coloured illustrations made from temporary Unsplash photographs (photo-originals/illustrate.js), standing in until our own campaign is shot (customise.jpg is still the photograph).
 // The original photographs are in photo-originals/home. To replace one, save the new picture over the file of the same name in public/home.
 import beliefImage from "@/public/home/belief.jpg";
 import collectionOne from "@/public/home/collection-1.jpg";
@@ -20,16 +20,16 @@ export const metadata: Metadata = {
   title: { absolute: title },
   description,
   alternates: { canonical: "/" },
-  openGraph: { type: "website", url: "/", siteName: "Invidzz", title, description, images: [{ url: heroImage.src, width: heroImage.width, height: heroImage.height, alt: "A pencil sketch of a floral summer wrap dress and a woven straw bag" }] },
+  openGraph: { type: "website", url: "/", siteName: "Invidzz", title, description, images: [{ url: heroImage.src, width: heroImage.width, height: heroImage.height, alt: "A coloured illustration of a floral summer wrap dress and a woven straw bag" }] },
   twitter: { card: "summary_large_image", title, description, images: [heroImage.src] },
 };
 
 // Mood pictures only: none of them shows a piece from the collection.
 const moodboard = [
-  { image: collectionOne, alt: "A model leaning back in an oversized tailored blazer, photographed from below", sizes: "(max-width: 680px) 100vw, 40vw" },
-  { image: collectionTwo, alt: "Soft folds of sheer white linen", sizes: "(max-width: 680px) 50vw, 30vw" },
-  { image: collectionThree, alt: "A belted camel coat worn over black trousers on stone steps", sizes: "(max-width: 680px) 50vw, 24vw" },
-  { image: collectionFour, alt: "Turned-up tan trousers and black leather shoes in afternoon light", sizes: "(max-width: 680px) 100vw, 30vw" },
+  { image: collectionOne, alt: "An illustration of a model leaning back in an oversized tailored blazer, seen from below", sizes: "(max-width: 680px) 100vw, 40vw" },
+  { image: collectionTwo, alt: "An illustration of soft folds of sheer white linen", sizes: "(max-width: 680px) 50vw, 30vw" },
+  { image: collectionThree, alt: "An illustration of a belted camel coat worn over dark trousers on stone steps", sizes: "(max-width: 680px) 50vw, 24vw" },
+  { image: collectionFour, alt: "An illustration of turned-up tan trousers and black leather shoes in afternoon light", sizes: "(max-width: 680px) 100vw, 30vw" },
 ];
 
 // A line of text that slides across the screen without stopping. The phrases are written out twice so the loop has no gap.
@@ -66,7 +66,7 @@ export default function Home() {
             </div>
           </div>
           <div className="hm-hero-art">
-            <Image src={heroImage} alt="A pencil sketch of a floral summer wrap dress and a woven straw bag, shown from the shoulders down" priority placeholder="blur" sizes="(max-width: 900px) 100vw, 56vw" />
+            <Image src={heroImage} alt="A coloured illustration of a floral summer wrap dress and a woven straw bag, shown from the shoulders down" priority placeholder="blur" sizes="(max-width: 900px) 100vw, 56vw" />
           </div>
         </div>
         <div className="page-wrap hm-hero-foot" aria-hidden="true">
@@ -77,7 +77,7 @@ export default function Home() {
 
       <section className="hm-belief page-wrap" aria-labelledby="belief-title">
         <div className="hm-belief-art reveal">
-          <Image src={beliefImage} alt="A pencil sketch of a belted summer dress with a full skirt and a small flower print, shown from the shoulders down" placeholder="blur" sizes="(max-width: 900px) 100vw, 40vw" />
+          <Image src={beliefImage} alt="A coloured illustration of a belted coral summer dress with a full skirt and a small flower print, shown from the shoulders down" placeholder="blur" sizes="(max-width: 900px) 100vw, 40vw" />
           <span aria-hidden="true">What we believe</span>
         </div>
         <div className="hm-belief-copy reveal">

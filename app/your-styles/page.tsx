@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { LockedNotice } from "@/components/locked-notice";
 import { formatPrice, topLaunches } from "@/lib/products";
 
 const styles = [
@@ -64,11 +63,7 @@ function SectionTitle({ kicker, title, note }: { kicker: string; title: string; 
 
 export default function YourStylesPage() {
   return (
-    <main className="locked-page">
-      {/* The page is locked until the first drop: everything in locked-content is blurred and cannot be clicked.
-          To unlock it, remove the LockedNotice and the locked-content wrapper (keep what is inside it). */}
-      <LockedNotice text="The first drop is on its way. This page opens when it arrives." />
-      <div className="locked-content" inert aria-hidden="true">
+    <main>
       <section className="page-hero page-wrap">
         <div>
           <p className="eyebrow">The Invidzz collection / 2025</p>
@@ -156,7 +151,6 @@ export default function YourStylesPage() {
         </div>
       </section>
       */}
-      </div>
     </main>
   );
 }

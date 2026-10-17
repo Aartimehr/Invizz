@@ -489,7 +489,7 @@ a.order-submit { cursor: pointer; }
 .st-dark .hm-prose p { color: rgba(248,244,237,.76); }
 .st-dark .hm-link:hover { color: var(--taupe); }
 
-/* The opening band is wine-coloured, with a warm terracotta glow behind the sketch and a plum shadow in the lower corner. */
+/* The opening band is wine-coloured, with a warm terracotta glow behind the illustration and a plum shadow in the lower corner. */
 .st-hero { background: radial-gradient(ellipse 60% 75% at 76% 46%, rgba(204,112,78,.85), transparent 70%), radial-gradient(ellipse 55% 60% at 0% 100%, rgba(52,30,66,.8), transparent 70%), linear-gradient(120deg, #57202d, var(--burgundy) 50%, #7c3038); }
 .st-hero .hm-eyebrow, .story .st-hero h1 em { color: #f3d3ac; }
 .st-hero .hm-prose p { color: rgba(248,244,237,.86); }
@@ -500,8 +500,8 @@ a.order-submit { cursor: pointer; }
 .st-hero-copy .hm-prose { max-width: 470px; }
 .st-hero-copy > .st-script { margin-top: 30px; transform: rotate(-3deg); transform-origin: left; }
 .st-hero-art { width: 100%; max-height: 680px; position: relative; aspect-ratio: 4 / 5; justify-self: end; }
-/* The sketch is dark lines on ivory paper; inverting it and screening it over the band leaves chalk lines on charcoal. */
-.st-hero-art img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; filter: grayscale(1) invert(1) contrast(1.3); mix-blend-mode: screen; }
+/* The coloured illustration sits on the band like a print, with a thin ivory edge and a soft shadow. */
+.st-hero-art img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; border: 6px solid var(--paper); box-shadow: 0 30px 70px rgba(30,10,16,.35); }
 .st-hero-note { position: absolute; top: 7%; right: 3%; text-align: center; transform: rotate(8deg); }
 
 .st-create { padding-block: var(--pad); background: var(--cream); }

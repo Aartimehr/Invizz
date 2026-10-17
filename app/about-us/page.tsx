@@ -5,10 +5,10 @@ import Link from "next/link";
 import { EarlyAccessForm } from "@/components/early-access-form";
 import { RevealOnScroll } from "@/components/reveal-on-scroll";
 import { DetailsStudio, InspirationTeaser, StoryTimeline, StylePicker } from "@/components/story-interactive";
-// Temporary pictures: pencil-sketch versions of Unsplash photographs, and one photograph of hands sketching.
-import linenSketch from "@/public/home/collection-2.jpg";
+// Temporary pictures: coloured illustrations made from Unsplash photographs, and one photograph of hands sketching.
+import linenArt from "@/public/home/collection-2.jpg";
 import handsPhoto from "@/public/home/customise.jpg";
-import heroSketch from "@/public/pages/about-1.jpg";
+import heroArt from "@/public/pages/about-1.jpg";
 
 export const metadata: Metadata = {
   title: "Our Story",
@@ -78,7 +78,7 @@ export default function AboutUsPage() {
             <p className="st-script">And that&apos;s where Invidzz begins.</p>
           </div>
           <div className="st-hero-art">
-            <Image src={heroSketch} alt="A chalk-style sketch of a woman in sunglasses and an open jacket, looking up" priority placeholder="blur" sizes="(max-width: 900px) 100vw, 46vw" />
+            <Image src={heroArt} alt="A coloured illustration of a woman in bright sunglasses, a red T-shirt and an open grey jacket, looking up at a blue sky" priority placeholder="blur" sizes="(max-width: 900px) 100vw, 46vw" />
             <p className="st-script st-hero-note" aria-hidden="true">Your ideas.<br />Our craft.</p>
           </div>
         </div>
@@ -128,7 +128,7 @@ export default function AboutUsPage() {
       <section className="st-why page-wrap" aria-labelledby="why-title">
         <div className="st-collage reveal">
           <figure className="st-collage-1"><Image src={handsPhoto} alt="A designer's hands sketching a garment in pencil on white paper" placeholder="blur" sizes="(max-width: 900px) 70vw, 30vw" /></figure>
-          <figure className="st-collage-2"><Image src={linenSketch} alt="A pencil sketch of soft folds of linen" placeholder="blur" sizes="(max-width: 900px) 50vw, 22vw" /></figure>
+          <figure className="st-collage-2"><Image src={linenArt} alt="An illustration of soft folds of linen" placeholder="blur" sizes="(max-width: 900px) 50vw, 22vw" /></figure>
           <span className="st-collage-3" aria-hidden="true" />
           <p className="st-script" aria-hidden="true">Less searching.<br />More creating.</p>
         </div>
